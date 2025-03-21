@@ -1,309 +1,227 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A responsive and SEO-enabled blogging website.">
-    <title>My Blog</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta name="description" content="A blogging website for sharing tech articles and tutorials.">
+    <meta name="keywords" content="Blog, Technology, Tutorials, Articles, Coding">
+    <meta name="author" content="Your Name">
+    <title>My Tech Blog</title>
+
+    <!-- Open Graph Meta Tags for better sharing on social media -->
+    <meta property="og:title" content="My Tech Blog">
+    <meta property="og:description" content="Latest articles and tutorials on tech, programming, and coding.">
+    <meta property="og:image" content="path/to/image.jpg">
+    <meta property="og:url" content="http://www.example.com">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Google Fonts for Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@300;600&display=swap" rel="stylesheet">
+
+    <!-- Inline CSS -->
+    <style>
+        /* Reset some basic styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background: #333;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2rem;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        #hero {
+            background: url('hero.jpg') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        #hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        #hero p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-button {
+            background: #ff5722;
+            padding: 10px 20px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+
+        section {
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        #blog {
+            background-color: #fff;
+        }
+
+        .blog-posts {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .blog-posts article {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        .blog-posts article img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .blog-posts article h3 {
+            font-size: 1.6rem;
+            margin-top: 15px;
+        }
+
+        .read-more {
+            display: inline-block;
+            color: #ff5722;
+            text-decoration: none;
+            margin-top: 10px;
+        }
+
+        footer {
+            background: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .blog-posts {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .blog-posts article {
+                width: 80%;
+            }
+        }
+    </style>
+
 </head>
+
 <body>
+
     <header>
-        <h1>My Blog</h1>
+        <div class="logo">
+            <h1>My Tech Blog</h1>
+        </div>
         <nav>
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
+                <li><a href="#blog">Blog</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
-    <main>
-        <section id="home">
-            <h2>Welcome to My Blog</h2>
+
+    <section id="hero">
+        <h2>Welcome to My Tech Blog</h2>
+        <p>Sharing the latest in tech, coding tutorials, and more!</p>
+        <a href="#blog" class="cta-button">Read Our Blog</a>
+    </section>
+
+    <section id="blog">
+        <h2>Latest Articles</h2>
+        <div class="blog-posts">
             <article>
-                <h3>Blog Post 1</h3>
-                <p>This is the content of the first blog post.</p>
+                <img src="tech_article_1.jpg" alt="Tech article 1">
+                <h3><a href="#">How to Build Your First Website</a></h3>
+                <p>Learn step-by-step how to create your own website with HTML, CSS, and JavaScript.</p>
+                <a href="#" class="read-more">Read More</a>
             </article>
             <article>
-                <h3>Blog Post 2</h3>
-                <p>This is the content of the second blog post.</p>
+                <img src="tech_article_2.jpg" alt="Tech article 2">
+                <h3><a href="#">Mastering Python for Data Science</a></h3>
+                <p>Start your journey into the world of Python and data science with this beginner-friendly guide.</p>
+                <a href="#" class="read-more">Read More</a>
             </article>
-        </section>
-        <section id="about">
-            <h2>About Me</h2>
-            <p>This section contains information about the blog author.</p>
-        </section>
-        <section id="contact" class="contact-section">
-    <div class="contact-container">
-        <h2 class="section-title">Get in Touch</h2>
-        <form class="contact-form" id="contactForm">
-            <div class="form-grid">
-                <div class="input-group">
-                    <input 
-                        type="text" 
-                        id="name" 
-                        name="name" 
-                        class="form-input"
-                        required
-                    >
-                    <label for="name" class="input-label">Your Name</label>
-                    <i class="fas fa-user input-icon"></i>
-                </div>
+            <!-- Add more blog posts here -->
+        </div>
+    </section>
 
-                <div class="input-group">
-                    <input 
-                        type="email" 
-                        id="email" 
-                        name="email" 
-                        class="form-input"
-                        required
-                    >
-                    <label for="email" class="input-label">Email Address</label>
-                    <i class="fas fa-envelope input-icon"></i>
-                </div>
-            </div>
+    <section id="about">
+        <h2>About Us</h2>
+        <p>We are passionate about technology, coding, and sharing knowledge with the world. Our goal is to help beginners and advanced learners alike to grow their skills and succeed in the tech industry.</p>
+    </section>
 
-            <div class="input-group">
-                <textarea 
-                    id="message" 
-                    name="message" 
-                    class="form-input textarea" 
-                    rows="5"
-                    required
-                ></textarea>
-                <label for="message" class="input-label">Your Message</label>
-                <i class="fas fa-comment-dots input-icon"></i>
-            </div>
-
-            <button type="submit" class="submit-btn">
-                <span class="btn-text">Send Message</span>
-                <div class="loading-dots">
-                    <div class="dot"></div>
-                    <div class="dot"></div>
-                    <div class="dot"></div>
-                </div>
-            </button>
-
-            <div class="form-feedback"></div>
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Have questions or feedback? Reach out to us!</p>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
         </form>
-    </div>
-</section>
+    </section>
 
-<style>
-.contact-section {
-    padding: 4rem 1rem;
-    background: #f8fafc;
-}
-
-.contact-container {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.section-title {
-    text-align: center;
-    font-size: 2.5rem;
-    color: #1e293b;
-    margin-bottom: 3rem;
-    position: relative;
-}
-
-.section-title::after {
-    content: '';
-    position: absolute;
-    bottom: -1rem;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 3px;
-    background: #6366f1;
-}
-
-.form-grid {
-    display: grid;
-    gap: 1.5rem;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    margin-bottom: 1.5rem;
-}
-
-.input-group {
-    position: relative;
-    margin-bottom: 2rem;
-}
-
-.form-input {
-    width: 100%;
-    padding: 1.2rem 1rem 1rem 2.5rem;
-    border: 2px solid #e2e8f0;
-    border-radius: 0.75rem;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-    background: white;
-}
-
-.form-input:focus {
-    border-color: #6366f1;
-    box-shadow: 0 3px 15px rgba(99, 102, 241, 0.1);
-    outline: none;
-}
-
-.input-label {
-    position: absolute;
-    left: 2.5rem;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #94a3b8;
-    pointer-events: none;
-    transition: all 0.3s ease;
-}
-
-.input-icon {
-    position: absolute;
-    left: 1rem;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #94a3b8;
-    transition: color 0.3s ease;
-}
-
-.form-input:focus ~ .input-label,
-.form-input:not(:placeholder-shown) ~ .input-label {
-    top: 0.8rem;
-    transform: translateY(0);
-    font-size: 0.875rem;
-    color: #6366f1;
-}
-
-.form-input:focus ~ .input-icon {
-    color: #6366f1;
-}
-
-.textarea {
-    resize: vertical;
-    min-height: 120px;
-    padding-left: 2.5rem;
-}
-
-.submit-btn {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    padding: 1rem;
-    border: none;
-    border-radius: 0.75rem;
-    background: linear-gradient(45deg, #6366f1, #4f46e5);
-    color: white;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: transform 0.2s ease;
-    overflow: hidden;
-}
-
-.submit-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(99, 102, 241, 0.3);
-}
-
-.loading-dots {
-    display: none;
-    position: absolute;
-    gap: 0.5rem;
-}
-
-.dot {
-    width: 8px;
-    height: 8px;
-    background: white;
-    border-radius: 50%;
-    animation: bounce 1.4s infinite ease-in-out;
-}
-
-.dot:nth-child(2) { animation-delay: 0.2s; }
-.dot:nth-child(3) { animation-delay: 0.4s; }
-
-@keyframes bounce {
-    0%, 80%, 100% { transform: translateY(0); }
-    40% { transform: translateY(-8px); }
-}
-
-.form-feedback {
-    margin-top: 1rem;
-    text-align: center;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    display: none;
-}
-
-.form-feedback.success {
-    background: #dcfce7;
-    color: #166534;
-}
-
-.form-feedback.error {
-    background: #fee2e2;
-    color: #991b1b;
-}
-
-@media (max-width: 768px) {
-    .section-title {
-        font-size: 2rem;
-    }
-    
-    .form-input {
-        padding-left: 2.2rem;
-    }
-    
-    .input-icon {
-        left: 0.8rem;
-    }
-}
-</style>
-
-<script>
-const contactForm = document.getElementById('contactForm');
-const submitBtn = contactForm.querySelector('.submit-btn');
-const feedback = document.querySelector('.form-feedback');
-
-contactForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    
-    submitBtn.disabled = true;
-    submitBtn.querySelector('.btn-text').style.opacity = '0';
-    submitBtn.querySelector('.loading-dots').style.display = 'flex';
-    
-    try {
-        // Simulate form submission
-        await new Promise(resolve => setTimeout(resolve, 1500));
-        
-        showFeedback('Message sent successfully!', 'success');
-        contactForm.reset();
-    } catch (error) {
-        showFeedback('Error sending message. Please try again.', 'error');
-    } finally {
-        submitBtn.disabled = false;
-        submitBtn.querySelector('.btn-text').style.opacity = '1';
-        submitBtn.querySelector('.loading-dots').style.display = 'none';
-    }
-});
-
-function showFeedback(message, type) {
-    feedback.textContent = message;
-    feedback.className = `form-feedback ${type}`;
-    feedback.style.display = 'block';
-    
-    setTimeout(() => {
-        feedback.style.display = 'none';
-    }, 4000);
-}
-</script>
-    </main>
     <footer>
-        <p>&copy; 2025 My Blog</p>
+        <p>&copy; 2025 My Tech Blog. All rights reserved.</p>
     </footer>
-    <script src="scripts.js"></script>
+
+    <script>
+        // For basic interactivity, like form validation or dynamic content
+        document.querySelector('form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert("Message sent successfully!");
+        });
+    </script>
+
 </body>
+
 </html>
