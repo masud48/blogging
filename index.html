@@ -34,18 +34,272 @@
             <h2>About Me</h2>
             <p>This section contains information about the blog author.</p>
         </section>
-        <section id="contact">
-            <h2>Contact</h2>
-            <form>
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" required></textarea>
-                <button type="submit">Send</button>
-            </form>
-        </section>
+        <section id="contact" class="contact-section">
+    <div class="contact-container">
+        <h2 class="section-title">Get in Touch</h2>
+        <form class="contact-form" id="contactForm">
+            <div class="form-grid">
+                <div class="input-group">
+                    <input 
+                        type="text" 
+                        id="name" 
+                        name="name" 
+                        class="form-input"
+                        required
+                    >
+                    <label for="name" class="input-label">Your Name</label>
+                    <i class="fas fa-user input-icon"></i>
+                </div>
+
+                <div class="input-group">
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        class="form-input"
+                        required
+                    >
+                    <label for="email" class="input-label">Email Address</label>
+                    <i class="fas fa-envelope input-icon"></i>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <textarea 
+                    id="message" 
+                    name="message" 
+                    class="form-input textarea" 
+                    rows="5"
+                    required
+                ></textarea>
+                <label for="message" class="input-label">Your Message</label>
+                <i class="fas fa-comment-dots input-icon"></i>
+            </div>
+
+            <button type="submit" class="submit-btn">
+                <span class="btn-text">Send Message</span>
+                <div class="loading-dots">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
+            </button>
+
+            <div class="form-feedback"></div>
+        </form>
+    </div>
+</section>
+
+<style>
+.contact-section {
+    padding: 4rem 1rem;
+    background: #f8fafc;
+}
+
+.contact-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #1e293b;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: #6366f1;
+}
+
+.form-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    margin-bottom: 1.5rem;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.form-input {
+    width: 100%;
+    padding: 1.2rem 1rem 1rem 2.5rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 0.75rem;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.form-input:focus {
+    border-color: #6366f1;
+    box-shadow: 0 3px 15px rgba(99, 102, 241, 0.1);
+    outline: none;
+}
+
+.input-label {
+    position: absolute;
+    left: 2.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #94a3b8;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.input-icon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #94a3b8;
+    transition: color 0.3s ease;
+}
+
+.form-input:focus ~ .input-label,
+.form-input:not(:placeholder-shown) ~ .input-label {
+    top: 0.8rem;
+    transform: translateY(0);
+    font-size: 0.875rem;
+    color: #6366f1;
+}
+
+.form-input:focus ~ .input-icon {
+    color: #6366f1;
+}
+
+.textarea {
+    resize: vertical;
+    min-height: 120px;
+    padding-left: 2.5rem;
+}
+
+.submit-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    border-radius: 0.75rem;
+    background: linear-gradient(45deg, #6366f1, #4f46e5);
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    overflow: hidden;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(99, 102, 241, 0.3);
+}
+
+.loading-dots {
+    display: none;
+    position: absolute;
+    gap: 0.5rem;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    background: white;
+    border-radius: 50%;
+    animation: bounce 1.4s infinite ease-in-out;
+}
+
+.dot:nth-child(2) { animation-delay: 0.2s; }
+.dot:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes bounce {
+    0%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-8px); }
+}
+
+.form-feedback {
+    margin-top: 1rem;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    display: none;
+}
+
+.form-feedback.success {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.form-feedback.error {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .form-input {
+        padding-left: 2.2rem;
+    }
+    
+    .input-icon {
+        left: 0.8rem;
+    }
+}
+</style>
+
+<script>
+const contactForm = document.getElementById('contactForm');
+const submitBtn = contactForm.querySelector('.submit-btn');
+const feedback = document.querySelector('.form-feedback');
+
+contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    submitBtn.disabled = true;
+    submitBtn.querySelector('.btn-text').style.opacity = '0';
+    submitBtn.querySelector('.loading-dots').style.display = 'flex';
+    
+    try {
+        // Simulate form submission
+        await new Promise(resolve => setTimeout(resolve, 1500));
+        
+        showFeedback('Message sent successfully!', 'success');
+        contactForm.reset();
+    } catch (error) {
+        showFeedback('Error sending message. Please try again.', 'error');
+    } finally {
+        submitBtn.disabled = false;
+        submitBtn.querySelector('.btn-text').style.opacity = '1';
+        submitBtn.querySelector('.loading-dots').style.display = 'none';
+    }
+});
+
+function showFeedback(message, type) {
+    feedback.textContent = message;
+    feedback.className = `form-feedback ${type}`;
+    feedback.style.display = 'block';
+    
+    setTimeout(() => {
+        feedback.style.display = 'none';
+    }, 4000);
+}
+</script>
     </main>
     <footer>
         <p>&copy; 2025 My Blog</p>
